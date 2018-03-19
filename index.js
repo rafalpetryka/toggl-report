@@ -13,9 +13,12 @@ toggl.getTimeEntries(new Date(startDate).toISOString(), new Date().toISOString()
             })
         );
         var actualTime = timeEntries.map((x) => {
-            return x.duration
+            if(x.duration > 0) {
+                return x.duration;
+            } else {
+                return 0;
+            }
         }).reduce((a, b) => a + b, 0);
-
         var expectedTime = dates.size * numberOfHoursPerDay * 3600;
         var resultInSeconds = actualTime - expectedTime;
         var resultInMinutes = Math.floor((actualTime - expectedTime) / 60.0);
