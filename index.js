@@ -47,7 +47,7 @@ let pluralizeHours = (hours) => {
         return 'godzinę';
     } else if ((hours >= 2 && hours <= 4) || (hours > 20 && ["2", "3", "4"].includes(hours.toString().slice(-1)))) {
         return 'godziny';
-    } else if ((hours > 5 && hours <= 21) || hours === 0 || (hours > 20 && ["5", "6", "7", "8", "9", "0", "1"].includes(hours.toString().slice(-1)))) {
+    } else if ((hours >= 5 && hours <= 21) || hours === 0 || (hours > 20 && ["5", "6", "7", "8", "9", "0", "1"].includes(hours.toString().slice(-1)))) {
         return 'godzin';
     }
 }
@@ -57,7 +57,7 @@ let pluralizeMinutes = (minutes) => {
         return 'minutę';
     } else if ((minutes >= 2 && minutes <= 4) || (minutes > 20 && ["2", "3", "4"].includes(minutes.toString().slice(-1)))) {
         return 'minuty';
-    } else if ((minutes > 5 && minutes <= 21) || minutes === 0 || (minutes > 20 && ["5", "6", "7", "8", "9", "0", "1"].includes(minutes.toString().slice(-1)))) {
+    } else if ((minutes >= 5 && minutes <= 21) || minutes === 0 || (minutes > 20 && ["5", "6", "7", "8", "9", "0", "1"].includes(minutes.toString().slice(-1)))) {
         return 'minut';
     }
 }
